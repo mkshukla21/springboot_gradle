@@ -19,14 +19,16 @@ public class BookController {
 	
 	@Autowired
 	BookRepository bookRepository ;
-
+    
+	
+	// save data of book
 	@PostMapping("/bookSave")
 	public String insertBook(@RequestBody Book book) {
 		bookRepository.save(book);
 		return "your record is saved successfully";
 		
 	}
-	
+	//save multiple data
 	@PostMapping("/multipleBookSave")
 	public String insertBook(@RequestBody List <Book> book) {
 		bookRepository.saveAll(book);
